@@ -33,10 +33,11 @@ export default {
 
 .container {
   color: white;
-  background-image: linear-gradient(260deg, #e20e0e 0%, #5c0a6b 100%);
+  background-image: linear-gradient(90deg, #20e6b3, #8e11f3, #4c20d4);
   height: 40px;
   text-align: center;
   padding: 10px;
+  position: relative;
 }
 footer {
   z-index: 1000;
