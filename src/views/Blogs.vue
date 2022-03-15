@@ -1,4 +1,5 @@
 <template>
+
   <div v-if="posts">
     <h2>Blogs</h2>
 
@@ -27,69 +28,28 @@
       </div>
 
     </div>
-    
+  
+
 <div class="viewport">
    <div class="title">
     <h1> Blogs   </h1> 
    </div>
- <div class="cards">
+ <div class="cards" >
   
-   <div class="card">
-     <div class="card_img card1">
+   <div class="card" v-for="post in posts" :key="post.id">
+                 <div v-if="posts" >
+     <img :src="post.img" class="card_img card1" alt="${post.title}">
           <div class="plus"><p>+</p></div>
      </div>
-     <h3>AMAZING FLUO</h3>
+     <h3>{{ post.title }}</h3>
+      <h5 class="card-category">{{ post.category }}</h5>
      <div class="line">
      </div>
      <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.  </p>
      
-    
+                 </div>
    </div>
-   <div class="card">
-     <div class="card_img card2">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>TITLE HERE</h3>
-     <div class="line">
-     </div>
-    <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-   </div>
-   <div class="card">
-     <div class="card_img card3">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>TITLE HERE</h3>
-     <div class="line">
-     </div>
-     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-   </div>
-   <div class="card">
-     <div class="card_img card4">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>TITLE HERE</h3>
-     <div class="line">
-     </div>
-     <p>voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p></div>
-   <div class="card">
-     <div class="card_img card5">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>TITLE HERE</h3>
-     <div class="line">
-     </div>
-    <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
-   </div>
-   <div class="card">
-     <div class="card_img card6">
-       <div class="plus"><p>+</p></div>
-     </div>
-     <h3>TITLE HERE</h3>
-     <div class="line">
-     </div>
-     <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  </p>
-   </div>
-</div>
+   
 </div>
  
           
