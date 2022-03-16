@@ -45,7 +45,7 @@
       <h5 class="card-category">{{ post.category }}</h5>
      <div class="line">
      </div>
-     <p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.  </p>
+     <p> {{ post.desc }} </p>
      
                  </div>
    </div>
@@ -112,11 +112,7 @@ export default {
   gap: 20px;
 }
 
-img {
-    height: 200px !important;
-  object-fit: cover;
-  max-width: 200px 
-}
+
 
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
@@ -257,16 +253,16 @@ h1{
 }
 
 .card_img{
-  width:100%;
-  height:150px;
-  position:reltive;
-  border-radius: 5px 5px 0px 0px;
-  background-size: cover;
-  background-position:center center; 
-  background-color: #20e6b3;
-  transition:1s;
-  -webkit-transition:1s;
+    height: 200px !important;
+  object-fit: cover;
+  max-width: 200px 
 }
+
+/* img {
+    height: 200px !important;
+  object-fit: cover;
+  max-width: 200px 
+} */
 
 .card1{
    background-image: url(http://www.festabimbianimazione.it/media/k2/galleries/136/Colori%20Fluo%20festa%20Arezzo%207.JPG);
