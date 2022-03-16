@@ -104,7 +104,7 @@ h4 {
   margin-inline: auto;
   max-width: 600px;
   margin-top: 100px;
-  background-color: rgb(168, 63, 63);
+  background-color: #8500e4;
   color: white;
   margin-bottom: 20px;
 }
