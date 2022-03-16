@@ -19,7 +19,7 @@ This is a blogging site where you can find and post blogs about the 2 GREATEST p
 </div>
  <div class="container_outer_img">
  <div class="img-inner">
- <img src='https://i.postimg.cc/8zzTNdRG/taylorswiftblogbackground.jpg'  alt="" class="container_img"/>
+ <img src='https://i.postimg.cc/cJzB57ST/taylorandlewisblogbackground-1.jpg'  alt="" class="container_img"/>
        </div>
      </div>
   </div>
@@ -191,4 +191,11 @@ a:active {
   text-decoration: underline;
 }
 
+
+@media only screen and (max-width: 700px) { 
+    .container_img {
+        max-width: 240px;
+        max-height: 240px;
+    }
+}
 </style>
