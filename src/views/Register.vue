@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     register() {
-      fetch("https://pos-backend-proj.herokuapp.com/users", {
+      fetch("https://amaarah-blog-backend.herokuapp.com/users", {
         method: "POST",
         body: JSON.stringify({
           name: this.name,

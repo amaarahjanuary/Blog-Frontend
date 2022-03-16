@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     login() {
-      fetch("https://pos-backend-proj.herokuapp.com/users", {
+      fetch("https://amaarah-blog-backend.herokuapp.com/users", {
         method: "POST",
         body: JSON.stringify({
           email: this.email,

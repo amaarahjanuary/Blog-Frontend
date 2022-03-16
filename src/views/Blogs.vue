@@ -39,13 +39,13 @@
    <div class="card" v-for="post in posts" :key="post.id">
                  <div v-if="posts" >
      <img :src="post.img" class="card_img card1" alt="${post.title}">
-          <div class="plus"><p>+</p></div>
      </div>
      <h3>{{ post.title }}</h3>
       <h5 class="card-category">{{ post.category }}</h5>
      <div class="line">
      </div>
      <p> {{ post.desc }} </p>
+     <p>Author: {{ post.author }} </p>
      
                  </div>
    </div>
@@ -224,6 +224,7 @@ h1{
   -webkit-transition:0.5s;
   cursor:pointer;
     flex: 1 1 auto;
+  background-color: #20e6b3;  
 }
 
 .card:hover{
