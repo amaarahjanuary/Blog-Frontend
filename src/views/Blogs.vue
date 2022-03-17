@@ -34,7 +34,7 @@
     <summary class="button">Create a blog</summary>
 			
     <div>
- <form action="/action_page.php">
+ <form action="">
   <label for="title">Title:</label>
   <input type="text" id="title" name="title"><br><br>
   <label for="category">Category:</label>
