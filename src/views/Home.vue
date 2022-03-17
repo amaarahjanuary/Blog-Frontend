@@ -193,9 +193,11 @@ a:active {
 
 
 @media only screen and (max-width: 700px) { 
-    .container_img {
+    .img-inner {
         max-width: 240px;
         max-height: 240px;
+          top: 8px;
+  left: 16px;
     }
 }
 </style>

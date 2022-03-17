@@ -26,7 +26,40 @@
           <option value="descending">Descending</option>
         </select>
       </div>
+      <div>
 
+
+
+ <details>
+    <summary class="button">Create a blog</summary>
+			
+    <div>
+ <form action="/action_page.php">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title"><br><br>
+  <label for="category">Category:</label>
+  <input type="text" id="category" name="category"><br><br>
+  <label for="text">Text:</label>
+  <input type="text" id="text" name="text"><br><br>
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description"><br><br>
+    <label for="img">Image link:</label>
+  <input type="text" id="img" name="img"><br><br>
+  <label for="author">Author:</label>
+  <input type="text" id="author" name="author"><br><br>
+  <input type="submit" value="Submit">
+</form>
+    
+    </div>
+
+
+
+
+	</details>
+
+
+
+      </div>
     </div>
   
 
@@ -344,5 +377,127 @@ h1{
 .zoomed{
   width:100%;
 }
+
+/* pop up modal start */
+
+
+.button {
+  width: 10em;
+  text-align: center;
+  font-weight: bold;
+  padding: 1em 2em;
+  background: #8500e4;
+  border-radius: 3em;
+  color: #20e6b3;
+  cursor: pointer;
+}
+
+details > div {
+  width: 20em;
+  border: 2px solid black;
+  padding: 1em 2em;
+  position: fixed;
+  width: 360px;
+  height: 240px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: white;
+  z-index: 3;
+  box-shadow: 10px 10px 10px DIMGRAY;
+}
+
+details[open] summary::after { 
+  content: "×"; 
+  font-size: 28pt;  
+  position: fixed; 
+  right: calc(50vw - 360px / 2 - 2em); 
+  top:  calc(50vh - 240px / 2 - 2em);
+  padding: 5pt 10pt;
+  z-index: 9;
+}
+
+details[open] summary::before {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+
+
+
+
+.neu-border {
+  border-radius: 30px;
+
+}
+.neu-border-inset {
+  border-radius: 30px;
+
+}
+
+h4 {
+    margin-top: -10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  gap: 20px;
+  width: 100%;
+  margin-inline: auto;
+  max-width: 600px;
+  margin-top: 100px;
+  background-color: #8500e4;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.form-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+.form-input,
+.form-btn {
+  border: none;
+  outline: none;
+  padding: 20px;
+}
+
+.form-btn {
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.form-btn:hover {
+  transform: scale(1.05);
+}
+
+.form-social-login {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-social-btn {
+  width: 45%;
+  color: white;
+}
+
+/* pop up modal end */
+
 
 </style>
