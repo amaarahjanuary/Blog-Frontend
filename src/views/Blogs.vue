@@ -497,7 +497,7 @@ h4 {
   color: white;
 }
 
-/* pop up modal end */
+/* pop up modal ends */
 
 
 </style>
