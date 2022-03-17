@@ -69,8 +69,9 @@ form {
   margin-inline: auto;
   max-width: 600px;
   margin-top: 200px;
-  background-color: rgb(168, 63, 63);
+  background-color: #8500e4;
   color: white;
+  border-radius: 30px;
 }
 label {
     color: #aaa;
@@ -80,6 +81,7 @@ label {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
+    border-radius: 30px;
 }
 input, select {
     display: block;
@@ -89,6 +91,7 @@ input, select {
     border: none;
     border-bottom: 1px solid #ddd;
     color: #555;
+      border-radius: 30px;
 }
 input[type="checkbox"] {
     display: inline-block;
@@ -130,5 +133,6 @@ textarea {
       resize: none;
       width: 100%;
       height: 100px;
+      border-radius: 30px;
 }
 </style>
