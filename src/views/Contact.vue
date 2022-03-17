@@ -69,7 +69,7 @@ form {
   margin-inline: auto;
   max-width: 600px;
   margin-top: 200px;
-  background-color: #8500e4;
+  background-color: #8500e5;
   color: white;
   border-radius: 30px;
 }
