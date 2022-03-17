@@ -38,7 +38,11 @@
   <label for="title">Title:</label>
   <input type="text" id="title" name="title"><br><br>
   <label for="category">Category:</label>
-  <input type="text" id="category" name="category"><br><br>
+    <select id="category" name="category">
+    <option value="Lewis Hamilton">Lewis Hamilton</option>
+    <option value="Taylor Swift">Taylor Swift</option>
+    <option value="Both">Both</option>
+  </select><br><br>
   <label for="text">Text:</label>
   <input type="text" id="text" name="text"><br><br>
   <label for="description">Description:</label>
