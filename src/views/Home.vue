@@ -193,11 +193,10 @@ a:active {
 
 
 @media only screen and (max-width: 700px) { 
-    .img-inner {
-        max-width: 240px;
-        max-height: 240px;
-          top: 8px;
-  left: 16px;
-    }
+    .container_img {
+  width: 100%;
+  animation: slideIn 1.5s ease-in-out forwards;
+  float: left;
+}
 }
 </style>

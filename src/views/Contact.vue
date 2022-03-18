@@ -1,14 +1,15 @@
 <template>
   <form @submit.prevent="handleSubmit">
-      <label>Full Name:</label>
-      <input type="name" required v-model="name">
+      <h2 class="form-heading">Contact Us</h2>
+          <h4>Get in contact with us</h4>
+      <input type="name" required v-model="name" placeholder="Full Name">
 
-      <label>Email:</label>
-      <input type="email" required v-model="email">
 
-      <label>Write me a message</label>
+      <input type="email" required v-model="email" placeholder="Email">
+
+      <label>Write us a message below</label>
       <br>
-      <textarea name="message" id="message" rows="5" placeholder="Write me a message" v-model="message"></textarea>
+      <textarea name="message" id="message" rows="5" v-model="message" class="message"></textarea>
 
       
 
@@ -20,9 +21,9 @@
 
   </form>
 
-  <p>Name: {{ name }}</p>
+  <!-- <p>Name: {{ name }}</p>
   <p>Email: {{ email }}</p>
-  <p>Message: {{ message }}</p>
+  <p>Message: {{ message }}</p> -->
 
 </template>
 
@@ -72,16 +73,26 @@ form {
   background-color: #8500e5;
   color: white;
   border-radius: 30px;
+  padding-bottom: 10px;
+    margin-top: 200px;
 }
+
+.form-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
 label {
-    color: #aaa;
+    color: white;
     display: inline-block;
     margin: 25px 0 15px;
-    font-size: 0.6em;
-    text-transform: uppercase;
+    font-size: 0.9em;
     letter-spacing: 1px;
     font-weight: bold;
     border-radius: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 input, select {
     display: block;
@@ -134,5 +145,9 @@ textarea {
       width: 100%;
       height: 100px;
       border-radius: 30px;
+}
+
+#message {
+     font-size: 0.9em;
 }
 </style>
