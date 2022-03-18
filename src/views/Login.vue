@@ -18,7 +18,7 @@
 
     <p>
       Not a member?
-      <router-link :to="{ name: 'Register' }">Create an account</router-link>
+      <router-link :to="{ name: 'Register' }"><div class="link">Create an account</div></router-link>
     </p>
   </form>
 </template>
@@ -94,6 +94,7 @@ h4 {
   text-transform: uppercase;
   font-size: 40px;
   padding-bottom: 10px;
+  color: #20e6b3;
 }
 
 .form-input,
@@ -120,5 +121,9 @@ h4 {
 .form-social-btn {
   width: 45%;
   color: white;
+}
+
+.link {
+  color: #20e6b3;
 }
 </style>

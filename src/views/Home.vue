@@ -53,7 +53,7 @@ export default {
   bottom: 0;
   height: 100%;
   z-index: -10;
-  background-color: var(--contrast-color);
+  background-color: #8500e4;
 }
 
 .container {

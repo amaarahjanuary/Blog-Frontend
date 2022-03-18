@@ -32,7 +32,7 @@
 
     <p>
       Already have an account?
-      <router-link :to="{ name: 'Login' }">Sign in</router-link>
+      <router-link :to="{ name: 'Login' }"><div class="link">Sign in</div></router-link>
     </p>
   </form>
 </template>
@@ -114,6 +114,7 @@ h4 {
   text-transform: uppercase;
   font-size: 40px;
   padding-bottom: 10px;
+  color: #20e6b3;
 }
 
 .form-input,
@@ -140,5 +141,9 @@ h4 {
 .form-social-btn {
   width: 45%;
   color: white;
+}
+
+.link {
+  color: #20e6b3;
 }
 </style>

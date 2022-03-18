@@ -82,17 +82,19 @@ form {
   text-transform: uppercase;
   font-size: 40px;
   padding-bottom: 10px;
+  color: #20e6b3;
 }
 
 label {
     color: white;
     display: inline-block;
-    margin: 25px 0 15px;
-    font-size: 0.9em;
+    margin: 25px 0 5px 0;
+    font-size: 1em;
     letter-spacing: 1px;
     font-weight: bold;
     border-radius: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: -20px;
 }
 input, select {
     display: block;
