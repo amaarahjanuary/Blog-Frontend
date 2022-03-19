@@ -192,11 +192,20 @@ a:active {
 }
 
 
-@media only screen and (max-width: 700px) { 
+@media only screen and (max-width: 750px) { 
+
+
     .container_img {
   width: 100%;
   animation: slideIn 1.5s ease-in-out forwards;
-  float: left;
+   right: -80px;
+
+    }
+
+
+.par{
+  margin-top: 90%;
 }
+
 }
 </style>

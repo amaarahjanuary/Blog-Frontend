@@ -29,6 +29,14 @@
       <div>
 
 
+<!-- search filter start -->
+
+
+
+<input type="text" v-model="search" placeholder="search blogs" />
+      
+
+
 
  <details>
     <summary class="button">Create a blog</summary>
@@ -74,6 +82,8 @@
  <div class="cards" >
   
    <div class="card" v-for="post in posts" :key="post.id">
+     <!-- <router-link :to="{ name: 'BlogDetails', params: { id: post.id }}">
+         </router-link> -->
                  <div v-if="posts" >
      <img :src="post.img" class="card_img card1" alt="${post.title}">
      </div>
@@ -85,8 +95,9 @@
      <p>Author: {{ post.author }} </p>
      
                  </div>
+                 
    </div>
-   
+
 </div>
  
           
@@ -99,6 +110,7 @@ export default {
   data() {
     return {
       posts: null,
+      search: ""
     };
   },
   mounted() {
@@ -138,6 +150,13 @@ export default {
       this.$router.push({ name: "Login" });
     }
   },
+  computed: {
+    filteredPosts: function(){
+      return this.posts.filter((post) => {
+        return post.title.match(this.search);
+      })
+    }
+  }
 };
 </script>
 <style>
