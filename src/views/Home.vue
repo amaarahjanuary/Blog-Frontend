@@ -13,7 +13,6 @@ This is a blogging site where you can find and post blogs about the 2 GREATEST p
 <div class="btns">
     <router-link :to="{ name: 'Login' }"><button class='btnsmore active'>Login</button></router-link>
     <router-link :to="{ name: 'Register' }"><button class='btnsmore active'>Register </button></router-link>
-
 </div>
 </div>
 </div>

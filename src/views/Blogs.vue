@@ -49,7 +49,7 @@
     <summary class="button">Create a blog</summary>
 			
     <div>
- <form @submit.prevent="newBlog">
+ <form @submit.prevent="createBlog">
   <label for="title">Title:</label>
   <input type="text" id="title" name="title" v-model="title"><br><br>
   <label for="category">Category:</label>
@@ -66,7 +66,14 @@
   <input type="text" id="img" name="img" v-model="img"><br><br>
   <label for="author">Author:</label>
   <input type="text" id="author" name="author" v-model="author"><br><br>
-  <input type="submit" value="Submit">
+              <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              @click="createBlog()"
+            >
+              Create Blog
+            </button>
 </form>
     
     </div>
@@ -154,6 +161,36 @@ export default {
         });
     }
   },
+// Create Bloog
+    createBlog() {
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      fetch("https://amaarah-blog-backend.herokuapp.com/posts", {
+        method: "POST",
+        body: JSON.stringify({
+          title: this.title,
+          description: this.description,
+          category: this.category,
+          text: this.text,
+          img: this.img,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          alert("Blog Created");
+          this.$router.push({ name: "Blogs" });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
+
   mounted() {
     console.log(localStorage.getItem("jwt"))
     if (localStorage.getItem("jwt")) {
