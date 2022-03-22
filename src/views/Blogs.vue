@@ -30,10 +30,11 @@
 
 
 <!-- search filter start -->
+  <input type="text" v-model="search" placeholder="search blogs" />
 
 
 
-<input type="text" v-model="search" placeholder="search blogs" />
+<!-- <input type="text" v-model="search" placeholder="search blogs" /> -->
       
 
 
@@ -47,7 +48,6 @@
   <input type="text" id="title" name="title" v-model="title"><br><br>
   <label for="category">Category:</label>
     <select id="category" name="category" v-model="category">
-    <option value="Lewis Hamilton">Alex Sexwale</option>
     <option value="Lewis Hamilton">Lewis Hamilton</option>
     <option value="Taylor Swift">Taylor Swift</option>
     <option value="Both">Both</option>
@@ -81,9 +81,10 @@
     <h1> Blogs   </h1> 
    </div>
  <div class="cards" >
-  
-   <div class="card" v-for="post in posts" :key="post.id">
+   <div class="card" v-for="post of filterPosts" :key="post.title">
+     
      <!-- <router-link :to="{ name: 'BlogDetails', params: { id: post.id }}">
+       <h3>{{ post.title }}</h3>
          </router-link> -->
                  <div v-if="posts" >
      <img :src="post.img" class="card_img card1" alt="${post.title}">
@@ -110,14 +111,14 @@
 export default {
   data() {
     return {
-      posts: null,
-      search: "",
+      posts: [],
       title: null,
       category: null,
       description: null,
       text: null,
       img: null,
-      author: null
+      author: null,
+      search: ""
     };
   },
   methods: {
@@ -186,7 +187,7 @@ export default {
     }
   },
   computed: {
-    filteredPosts: function(){
+    filterPosts: function(){
       return this.posts.filter((post) => {
         return post.title.match(this.search);
       })

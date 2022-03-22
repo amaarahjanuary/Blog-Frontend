@@ -1,5 +1,5 @@
 <template>
-<div class="nav">
+<div class="nav" >
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
     <div class="nav-title">
@@ -20,7 +20,9 @@
     <router-link to="/login">Login</router-link>
     <router-link to="/register">Register</router-link>
     <router-link to="/blogs">Blogs</router-link>
+    <router-link to="/profile">Profile</router-link>
     <router-link to="/contact">Contact</router-link>
+    <router-link @click="logout" class="logout" :to="{ name: 'Home' }">Log out</router-link>
   </div>
 </div>
 </template>
@@ -135,7 +137,7 @@ body {
     position: absolute;
     display: block;
     width: 100%;
-    background-image: linear-gradient(260deg, #e20e0e 0%, #5c0a6b 100%);
+  background-image: linear-gradient(90deg, #20e6b3, #8e11f3, #4c20d4);
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
