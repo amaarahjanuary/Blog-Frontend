@@ -45,6 +45,7 @@ export default {
       })
         .then((response) => response.json())
         .then((json) => {
+          console.log(json)
           localStorage.setItem("jwt", json.jwt);
           alert("User logged in");
           this.$router.push({ name: "Blogs" });

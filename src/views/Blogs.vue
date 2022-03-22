@@ -42,23 +42,24 @@
     <summary class="button">Create a blog</summary>
 			
     <div>
- <form action="">
+ <form @submit.prevent="newBlog">
   <label for="title">Title:</label>
-  <input type="text" id="title" name="title"><br><br>
+  <input type="text" id="title" name="title" v-model="title"><br><br>
   <label for="category">Category:</label>
-    <select id="category" name="category">
+    <select id="category" name="category" v-model="category">
+    <option value="Lewis Hamilton">Alex Sexwale</option>
     <option value="Lewis Hamilton">Lewis Hamilton</option>
     <option value="Taylor Swift">Taylor Swift</option>
     <option value="Both">Both</option>
   </select><br><br>
   <label for="text">Text:</label>
-  <input type="text" id="text" name="text"><br><br>
+  <input type="text" id="text" name="text" v-model="text"><br><br>
   <label for="description">Description:</label>
-  <input type="text" id="description" name="description"><br><br>
+  <input type="text" id="description" name="description" v-model="description"><br><br>
     <label for="img">Image link:</label>
-  <input type="text" id="img" name="img"><br><br>
+  <input type="text" id="img" name="img" v-model="img"><br><br>
   <label for="author">Author:</label>
-  <input type="text" id="author" name="author"><br><br>
+  <input type="text" id="author" name="author" v-model="author"><br><br>
   <input type="submit" value="Submit">
 </form>
     
@@ -110,10 +111,44 @@ export default {
   data() {
     return {
       posts: null,
-      search: ""
+      search: "",
+      title: null,
+      category: null,
+      description: null,
+      text: null,
+      img: null,
+      author: null
     };
   },
+  methods: {
+    newBlog() {
+      console.log(localStorage.getItem("jwt"))
+      fetch("https://amaarah-blog-backend.herokuapp.com/posts", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+        body: JSON.stringify({
+          title: this.title,
+          category: this.category,
+          text: this.text,
+          description: this.description,
+          img: this.img,
+          author: this.author
+        }),
+      })
+      .then((response) => response.json())
+        .then((json) => {
+          console.log(json)
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    }
+  },
   mounted() {
+    console.log(localStorage.getItem("jwt"))
     if (localStorage.getItem("jwt")) {
       fetch("https://amaarah-blog-backend.herokuapp.com/posts", {
         method: "GET",
