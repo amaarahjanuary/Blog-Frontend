@@ -39,7 +39,7 @@
         methods: {
             handleSubmit() {
                 console.log(this.name, this.email, this,message);
-                fetch("http://localhost:8080/contact", {
+                fetch("https://amaarah-blog-backend.herokuapp.com/", {
                     method: "POST", 
                     body: JSON.stringify({
                         name: this.name, 

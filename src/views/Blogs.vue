@@ -29,6 +29,12 @@
       <div>
 
 
+<!-- Search alphabetically -->
+
+
+
+
+
 <!-- search filter start -->
   <input type="text" v-model="search" placeholder="search blogs" />
 
