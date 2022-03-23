@@ -49,7 +49,7 @@
     <summary class="button">Create a blog</summary>
 			
     <div>
- <form @submit.prevent="createBlog">
+ <form >
   <label for="title">Title:</label>
   <input type="text" id="title" name="title" v-model="title"><br><br>
   <label for="category">Category:</label>
@@ -66,14 +66,14 @@
   <input type="text" id="img" name="img" v-model="img"><br><br>
   <label for="author">Author:</label>
   <input type="text" id="author" name="author" v-model="author"><br><br>
-              <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-              @click="createBlog()"
-            >
-              Create Blog
-            </button>
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-dismiss="modal"
+    @click="createBlog"
+  >
+    Create Blog
+  </button>
 </form>
     
     </div>
@@ -106,7 +106,7 @@
       <h5 class="card-category">{{ post.category }}</h5>
      <div class="line">
      </div>
-     <p> {{ post.desc }} </p>
+     <p> {{ post.description }} </p>
      <p>Author: {{ post.author }} </p>
      
                  </div>
@@ -135,34 +135,33 @@ export default {
     };
   },
   methods: {
-    newBlog() {
-      console.log(localStorage.getItem("jwt"))
-      fetch("https://amaarah-blog-backend.herokuapp.com/posts", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        },
-        body: JSON.stringify({
-          title: this.title,
-          category: this.category,
-          text: this.text,
-          description: this.description,
-          img: this.img,
-          author: this.author
-        }),
-      })
-      .then((response) => response.json())
-        .then((json) => {
-          console.log(json)
-        })
-        .catch((err) => {
-          alert(err);
-        });
-    }
-  },
-// Create Bloog
+    // newBlog() {
+    //   console.log(localStorage.getItem("jwt"))
+    //   fetch("https://amaarah-blog-backend.herokuapp.com/posts", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    //     },
+    //     body: JSON.stringify({
+    //       title: this.title,
+    //       category: this.category,
+    //       text: this.text,
+    //       description: this.description,
+    //       img: this.img,
+    //       author: this.author
+    //     }),
+    //   })
+    //   .then((response) => response.json())
+    //     .then((json) => {
+    //       console.log(json)
+    //     })
+    //     .catch((err) => {
+    //       alert(err);
+    //     });
+    // },
     createBlog() {
+      console.log(localStorage.getItem("jwt"))
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
@@ -176,10 +175,10 @@ export default {
           text: this.text,
           img: this.img,
         }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        },
+        // headers: {
+        //   "Content-type": "application/json; charset=UTF-8",
+        //   Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        // },
       })
         .then((response) => response.json())
         .then((json) => {
@@ -190,7 +189,7 @@ export default {
           alert(err);
         });
     },
-
+  },
   mounted() {
     console.log(localStorage.getItem("jwt"))
     if (localStorage.getItem("jwt")) {
