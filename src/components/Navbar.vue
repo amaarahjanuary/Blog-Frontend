@@ -67,7 +67,10 @@ body {
   height: 50px;
   width: 100%;
   background-image: linear-gradient(90deg, #20e6b3, #8e11f3, #4c20d4);
-  position: relative;
+  position: fixed;
+    z-index: 100;
+      top: 0;
+  left: 0;
 }
 
 

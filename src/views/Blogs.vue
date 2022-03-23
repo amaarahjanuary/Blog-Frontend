@@ -1,5 +1,8 @@
 <template>
-
+<br>
+<br>
+<br>
+<br>
   <div v-if="posts">
     <h2>Blogs</h2>
 
@@ -14,9 +17,9 @@
           id="sortCategory"
           onchange="sortCategory()"
         >
-          <option value="All">All</option>
-          <option value="Footwear">Footwear</option>
-          <option value="Clothing">Clothing</option>
+          <option value="Both">Both</option>
+          <option value="Lewis Hamilton">Lewis Hamilton</option>
+          <option value="Taylor Swift">Taylor Swift</option>
         </select>
       </div>
       <div class="d-flex w-25 ms-3">
@@ -115,7 +118,7 @@
 
 </div>
  
-          
+        
 
 
 
@@ -390,7 +393,7 @@ h1{
 .card_img{
     height: 200px !important;
   object-fit: cover;
-  max-width: 200px 
+  max-width: 310px 
 }
 
 /* img {

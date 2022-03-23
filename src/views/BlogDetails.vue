@@ -16,9 +16,10 @@
 </template>
 <script>
 export default {
+  props: ['post._id'],
   data() {
     return {
-      posts: null,
+      posts: [],
     };
   },
   mounted() {
