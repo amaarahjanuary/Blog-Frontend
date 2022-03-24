@@ -175,5 +175,8 @@ body {
 	 padding: 20px;
 	 text-decoration: none;
 }
+  .nav.active {
+    left: 0;
+  }
   /* background-image: linear-gradient(260deg, #e20e0e 0%, #5c0a6b 100%); */
 </style>

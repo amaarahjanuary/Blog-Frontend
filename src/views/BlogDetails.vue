@@ -1,11 +1,19 @@
 <template>
+
+<br>
+<br>
+<br>
+<br>
+ 
   <div v-if="post">
-   <p>post</p> 
+    <h2>{{ post.title }}</h2>
+    <br>
     <div class="blog">
-      <img class="blog-image neu-border" :src="post.img" :alt="post.title" />
+      <img class="blog-image" :src="post.img" :alt="post.title" />
       <div class="blog-details">
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.description }}</p>
+       
+        <h3>{{ post.description }}</h3>
+        <br>
            <p>{{ post.text }}</p>
         <p>{{ post.category }}</p>
       </div>
@@ -38,6 +46,15 @@
  
 
      <Loader/>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 </template>
 <script>
@@ -297,4 +314,10 @@ h1{
 .zoomed{
   width:100%;
 }  */
+
+.blog-image{
+    height: 400px !important;
+  object-fit: cover;
+  max-width: 600px 
+}
 </style>
