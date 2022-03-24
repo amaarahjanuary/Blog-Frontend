@@ -1,5 +1,5 @@
 <template>
-<div class="nav" >
+<div class="nav" :class="{ active: isActive }">
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
     <div class="nav-title">
@@ -14,14 +14,14 @@
     </label>
   </div>
   
-  <div class="nav-links" :class="{ active: isActive }">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/login">Login</router-link>
-    <router-link to="/register">Register</router-link>
-    <router-link to="/blogs">Blogs</router-link>
-    <router-link to="/profile">Profile</router-link>
-    <router-link to="/contact">Contact</router-link>
+  <div class="nav-links" >
+    <router-link @click="toggleNav" to="/">Home</router-link>
+    <router-link @click="toggleNav" :to="{ name: 'About' }">About</router-link>
+    <router-link @click="toggleNav" :to="{ name: 'Login' }">Login</router-link>
+    <router-link @click="toggleNav" :to="{ name: 'Register' }">Register</router-link>
+    <router-link @click="toggleNav" :to="{ name: 'Blogs' }">Blogs</router-link>
+    <router-link @click="toggleNav" :to="{ name: 'Profile' }">Profile</router-link>
+    <router-link @click="toggleNav" :to="{ name: 'Contact' }">Contact</router-link>
     <router-link @click="logout" class="logout" :to="{ name: 'Home' }">Log out</router-link>
   </div>
 </div>
@@ -112,6 +112,15 @@ body {
 
 .nav > #nav-check {
   display: none;
+}
+ #nav a {
+	 font-weight: bold;
+	 color: #2c3e50;
+	 padding: 20px;
+	 text-decoration: none;
+}
+ .nav a.router-link-exact-active:not(.logout) {
+	 color: rgb(0, 195, 255);
 }
 
 @media (max-width:600px) {
