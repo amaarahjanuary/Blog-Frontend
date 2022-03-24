@@ -98,10 +98,8 @@
    </div>
  <div class="cards" >
    <div class="card" v-for="post of filterPosts" :key="post.title">
-     
-     <!-- <router-link :to="{ name: 'BlogDetails', params: { id: post.id }}">
-       <h3>{{ post.title }}</h3>
-         </router-link> -->
+   
+    
                  <div v-if="posts" >
      <img :src="post.img" class="card_img card1" alt="${post.title}">
      </div>
@@ -111,8 +109,10 @@
      </div>
      <p> {{ post.description }} </p>
      <p>Author: {{ post.author }} </p>
-     
-                 </div>
+       <p>   
+         <router-link :to="{ name: 'BlogDetails', params: { id: post._id }}">Read More...</router-link> 
+       </p>
+      </div>
                  
    </div>
 
