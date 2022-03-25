@@ -316,6 +316,7 @@ ul.comment-list li a {
 }
 .comment-respond button:hover {
   background: #8e11f3;
+  color: white;
 }
 
 .nav-links {

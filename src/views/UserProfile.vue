@@ -1,6 +1,8 @@
 <template>
 
-
+<br>
+<br>
+<br>
 
 <div class="box"  v-for="user of users" :key="user._id" >
   
