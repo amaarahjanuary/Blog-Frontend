@@ -6,43 +6,47 @@
 <br>
  
   <div v-if="post">
-    <h2>{{ post.title }}</h2>
-    <br>
-    <div class="blog">
-      <img class="blog-image" :src="post.img" :alt="post.title" />
-      <div class="blog-details">
-       
-        <h3>{{ post.description }}</h3>
-        <br>
-           <p>{{ post.text }}</p>
-        <p>{{ post.category }}</p>
-      </div>
+          <h1 class="site-title">{{ post.title }}</h1>
+      <p class="site-description"> {{ post.description }} </p>   
+  <br>
+
+<img :src="post.img" class="card_img card1" alt="${post.title}">
+  <div id="page">
+ 
+  <div class="site-content">
+    <div class="content-area">
+      <main class="site-main" role="main">
+        <article class="post">
+          <div class="entry-meta">
+            <span class="posted-on"> <p>Author: {{ post.author }} </p></span>
+          </div>
+          <div class="entry-content">
+                <p> {{ post.text }} </p>
+          </div>
+          <footer class="entry-footer">
+            <p>Category: {{ post.category }} </p>
+          </footer>
+        </article>
+        <div class="comments-area">
+          <h2 class="comment-title">Comments</h2>
+          
+          <div class="comment-respond">
+            <h2>Leave a Comment</h2>
+            <br>
+      
+            <textarea id="message"></textarea>
+            <button>Submit Comment</button>
+          </div>
+        </div>
+      </main>
+
     </div>
   </div>
-                   <!-- <div v-if="post" >
-     <img :src="post.img" class="card_img card1" alt="${post.title}">
-     </div>
-  <div class="viewport">
-   <div class="title">
-    <h1> Blogs   </h1> 
-   </div>
- <div class="cards" >
-   <div class="card">
-   
-    
 
-     <h3>{{ post.title }}</h3>
-      <h5 class="card-category">{{ post.category }}</h5>
-     <div class="line">
-     </div>
-     <p> {{ post.description }} </p>
-     <p>Author: {{ post.author }} </p>
+</div>
 
-      </div>
-                 
-   </div>
+  
 
-</div> -->
  
 
      <Loader/>
@@ -55,7 +59,7 @@
 <br>
 <br>
 <br>
-
+  </div>
 </template>
 <script>
 export default {
@@ -88,7 +92,7 @@ export default {
         )
           .then((response) => response.json())
           .then((json) => {
-            this.post.author_name = json.name;
+            this.post.author = json.name;
           });
       });
   },
@@ -99,225 +103,281 @@ export default {
 
 
 
- /* #post {
-  gap: 20px;
-}
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
-
-*{
-  margin: 0px;
-}
-
-.viewport{
-  position:relative;
-  background-size: 200% 200%;
-  height: auto;
-  width:100%;
-  -webkit-animation:   AnimationName 10s ease infinite;
--moz-animation: AnimationName 10s ease infinite;
-animation: AnimationName 10s ease infinite;
-  
-}
-
-
-.card p{
-  font-family: lato;
-  margin:0px;
-  color: black;
-  font-weight: 400;
-  font-size:15px;
-  line-height:90%;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top:3%;
-  padding-bottom:8%;
-  border-radius:20px;
-  cursor:pointer;
-  transition: ease 1s;
-  -webkit-transition: ease 1s;
-}
-
-.card h3{
-  font-family: lato;
-  margin:0px;
-  color: black;
-  font-weight: 400;
-  font-size:20px;
-  line-height:90%;
-  padding-left: 8%;
-  padding-top:8%;
-  padding-bottom:3%;
-  border-radius:20px;
-  cursor:pointer;
-  transition: ease 1s;
-  -webkit-transition: ease 1s;
-}
-
-h1{
-  font-family: lato;
-  color:#8e11f3;
-  font-weight: 400;
-  font-size:35px;
-  line-height:90%;
-  padding-bottom:140px;
-  padding-top:150px;
-  position:relative;
-  text-align:center;
-  
-}
-
-.title{
-  width:78%;
-  margin:auto;
-  padding-left:0px;
-  padding-bottom:0px;
-}
-
-.cards{
-  width:80%;
-  position:relative;
-  margin-left:auto;
-  margin-right:auto;
-  padding-bottom:200px;
-  display:flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  
-}
-
-.card{
-  width:22%;
-  position:relative;
-  background-color:white;
-  margin:1.13%;
-  border-radius:5px;
-  transition: 1s;
-  -webkit-transition:0.5s;
-  cursor:pointer;
-    flex: 1 1 auto;
-  background-color: #20e6b3;  
-}
-
-.card:hover{
-  transform: scale(1.05);
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
-}
-
-@media screen and (max-width: 1200px){
-  .card{
-  width:30%;
-  margin:1.6%;
-  }
-}
-
-@media screen and (max-width: 800px){
-  .card{
-  width:45%;
-  margin:2.5%;
-  }
-}
-
-@media screen and (max-width: 500px){
-  .card{
-  width:98%;
-  margin:2%;
-  }
-}
-
-.card_img{
-    height: 200px !important;
-  object-fit: cover;
-  max-width: 310px 
-}
-
-
-.card1{
-   background-image: url(http://www.festabimbianimazione.it/media/k2/galleries/136/Colori%20Fluo%20festa%20Arezzo%207.JPG);
-}
-.card2{
-   background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQvdIMVlW3Mn8TmkGmtulq2taIDoUIJvr_lt87EWhgdCY5diNhH0Q);
-}
-.card3{
-   background-image: url(http://www.romatoday.it/~media/horizontal-hi/26065597680895/fluo-party-2-2.jpg);
-}
-.card4{
-   background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSiLXTcanAKRZhMo-5Ga9pzsXIgjWcSbCdz3xFhMVI1PDZSRgQgUQ);
-}
-.card5{
-   background-image: url(https://www.gadgetsvirali.com/wp-content/uploads/2016/09/preservativo-fluo-thumbnail-1.jpg);
-}
-.card6{
-   background-image: url(http://www.festabimbianimazione.it/media/k2/galleries/136/Colori%20Fluo%20festa%20Arezzo%207.JPG);
-}
-
-.line{
-  height:2px;
-  width:84%;
-  margin:auto;
-  background-color: #8e11f3;
-}
-
-.title input{
-  background: transparent;
-  border:1px solid white;
-  padding-top:10px;
-  padding-bottom:10px;
-  padding-left:20px;
-  display:inline;
-  font-family: lato;
-  color: white;
-  font-size:18px;
-  line-height:90%;
-  border-radius:30px;
-  width:150px;
-  float:right;
-  margin-top:30px;
-}
-
-.title textarea:focus, input:focus{
-    outline: none;
-}
-
-.plus{
-  width:20px;
-  height:20px;
-  background: transparent;
-  border-radius: 50%;
-  position: absolute;
-  border: 2px solid white;
-  top:10px;
-  right:10px;
-  transition: 1s;
-  -webkit-transition: 1s;
-}
-
-.plus:hover{
-  transform: scale(1.1) rotate(90deg);
-}
-
-.plus p{
-  padding: 0px !important;
-  display:inline;
-  margin:0px;
-  line-height:50%;
-  left:50%;
-  top:45.3%;
-  transform:translate(-50%,-50%);
-  position:absolute;
-  color: white;
-}
-
-.zoomed{
-  width:100%;
-}  */
-
+ 
+/* 
 .blog-image{
     height: 400px !important;
   object-fit: cover;
   max-width: 600px 
+} */
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700);
+
+
+
+
+
+a {
+  padding-bottom: 2px;
+  color: #433F3F;
+  text-decoration: none;
+  border-bottom: 1px solid #433F3F;
+  transition: all .15s ease-in-out;
 }
+a:hover {
+  color: #A34040;
+  border-bottom-color: #A34040;
+}
+
+#page {
+  margin: 120px auto 60px;
+  padding: 0 30px;
+  max-width: 900px;
+}
+
+.site-header {
+  text-align: center;
+}
+
+.site-header:after {
+  display: block;
+  content: '';
+  margin: 60px auto 90px;
+  max-width: 400px;
+  border-bottom: 1px solid #D6CCC7;
+}
+
+h1.site-title {
+  margin: 0 0 10px 0;
+  font-size: 50px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  padding: 20px;
+}
+h1.site-title a {
+  border: none;
+}
+
+p.site-description {
+  margin: 0;
+  font-size: 16px;
+  color: #64625C;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.site-main {
+  margin: auto;
+  max-width: 640px;
+}
+
+.site-main .entry-title,
+.site-main .entry-meta {
+  text-align: center;
+}
+
+h1.entry-title {
+  margin: 60px 0 5px 0;
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.entry-meta .posted-on {
+  margin: 0;
+  color: #64625C;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.entry-content {
+  margin-top: 60px;
+  font-size: 22px;
+}
+
+.entry-content > p:first-of-type:first-line {
+  text-transform: uppercase;
+}
+
+.entry-footer {
+  margin: 90px 0;
+  padding: 30px 0;
+  font-size: 18px;
+  font-style: italic;
+  border-top: 1px solid #D6CCC7;
+  border-bottom: 1px solid #D6CCC7;
+}
+.entry-footer p {
+  margin: 0;
+}
+
+.comment-area {
+  margin-top: 90px;
+}
+
+h2.comment-title {
+  font-size: 36px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+h2.comment-title:after {
+  display: block;
+  content: '';
+  margin: 30px auto 60px;
+  max-width: 300px;
+  border-bottom: 1px solid #D6CCC7;  
+}
+
+ul.comment-list {
+  margin: 0;
+  padding: 0;
+}
+
+ul.comment-list li {
+  margin-bottom: 60px;
+  list-style-type: none;
+}
+
+ul.comment-list li a {
+  display: inline-block;
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+}
+
+.comment-author {
+  font-size: 22px;
+  font-weight: bold;
+}
+.comment-author a {
+  border-bottom: none;
+}
+
+.comment-meta {
+  font-size: 16px;
+}
+
+.comment-content {
+  font-size: 18px;
+}
+
+.reply {
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.comment-respond {
+  margin-top: 90px;
+}
+
+.comment-reply-title,
+.comment-respond input[type="text"] {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.comment-reply-title {
+  color: #64625C;
+}
+
+.comment-respond input[type="text"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #F6F4ED;
+  border: 1px solid #D6CCC7;
+}
+
+.comment-respond textarea {
+  width: 100%;
+  padding: 10px;
+  height: 200px;
+  background: #F6F4ED;
+  border: 1px solid #D6CCC7;
+}
+
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: transparent;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.comment-respond button:hover {
+  background: #D6CCC7;
+}
+
+.nav-links {
+  margin-top: 150px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: auto;
+  zoom: 1;
+}
+
+.nav-links a {
+  padding-bottom: 10px;
+  color: #433F3F;
+  text-decoration: none;
+  border-bottom: none;
+}
+.nav-links a:hover {
+  color: #A34040;
+}
+
+.previous-post,
+.next-post {
+  display: block;
+  width: 50%;
+}
+.previous-post {
+  float: left;
+  text-align: left;
+}
+.next-post {
+  float: right;
+  text-align: right;
+}
+
+.site-footer {
+  margin-top: 120px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 680px) {
+  #page {
+    margin: 60px auto 30px;
+  }
+  
+  .previous-post,
+  .next-post {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+}
+
+.card_img{
+    height: 400px !important;
+  object-fit: cover;
+  max-width: 710px 
+}
+
 </style>
