@@ -123,7 +123,7 @@ body {
 	 color: rgb(0, 195, 255);
 }
 
-@media (max-width:600px) {
+@media (max-width:750px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;

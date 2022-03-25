@@ -4,7 +4,9 @@
 <br>
 <br>
   <div v-if="posts">
-    <h2>Blogs</h2>
+       <div class="title">
+    <h1> Blogs   </h1> 
+   </div>
 
   </div>
   <div v-else>Loading blogs...</div>
@@ -68,15 +70,13 @@
     <label for="img">Image link:</label>
   <input type="text" id="img" name="img" v-model="img"><br><br>
   <label for="author">Author:</label>
-  <input type="text" id="author" name="author" v-model="author"><br><br>
-  <button
-    type="button"
-    class="btn btn-primary"
-    data-bs-dismiss="modal"
-    @click="createBlog"
-  >
+  <input type="text" id="author" name="author" v-model="author">
+       <div class="comment-respond">
+  <button @click="createBlog">
     Create Blog
   </button>
+       </div>
+       <br>
 </form>
     
     </div>
@@ -93,9 +93,7 @@
   
 
 <div class="viewport">
-   <div class="title">
-    <h1> Blogs   </h1> 
-   </div>
+
  <div class="cards" >
    <div class="card" v-for="post of filterPosts" :key="post.title">
    
@@ -109,9 +107,11 @@
      </div>
      <p> {{ post.description }} </p>
      <p>Author: {{ post.author }} </p>
+     <div class="comment-respond">
        <p>   
-         <router-link :to="{ name: 'BlogDetails', params: { id: post._id }}">Read More...</router-link> 
+         <router-link :to="{ name: 'BlogDetails', params: { id: post._id }}"><button>Read More...</button></router-link> 
        </p>
+     </div>
       </div>
                  
    </div>
@@ -325,8 +325,8 @@ h1{
   font-weight: 400;
   font-size:35px;
   line-height:90%;
-  padding-bottom:140px;
-  padding-top:150px;
+  padding-bottom:50px;
+  padding-top:50px;
   position:relative;
   text-align:center;
   
@@ -369,6 +369,12 @@ h1{
   box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
 }
 
+.card_img{
+    height: 200px;
+  object-fit: cover;
+  max-width: 100% 
+}
+
 @media screen and (max-width: 1200px){
   .card{
   width:30%;
@@ -388,13 +394,15 @@ h1{
   width:98%;
   margin:2%;
   }
-}
 
-.card_img{
+  .card_img{
     height: 200px !important;
   object-fit: cover;
   max-width: 310px 
 }
+}
+
+
 
 /* img {
     height: 200px !important;
@@ -502,7 +510,7 @@ details > div {
   padding: 1em 2em;
   position: fixed;
   width: 360px;
-  height: 240px;
+  height: 340px;
   top: 0;
   left: 0;
   right: 0;
@@ -566,6 +574,7 @@ h4 {
   background-color: #8500e4;
   color: white;
   margin-bottom: 20px;
+  max-height: 800px;
 }
 
 .form-heading {
@@ -603,5 +612,20 @@ h4 {
 
 /* pop up modal ends */
 
-
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: white;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.comment-respond button:hover {
+  background: #8e11f3;
+  color: white;
+}
 </style>

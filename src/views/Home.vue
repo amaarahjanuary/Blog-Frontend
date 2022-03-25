@@ -6,13 +6,13 @@
   <h1>Welcome to tayLewis</h1>
 </div>
 <div class="par">
-<p>
+<h3>
 This is a blogging site where you can find and post blogs about the 2 GREATEST people on earth: Lewis Hamilton and Taylor Swift.
-</p>
+</h3>
 </div>
-<div class="btns">
-    <router-link :to="{ name: 'Login' }"><button class='btnsmore active'>Login</button></router-link>
-    <router-link :to="{ name: 'Register' }"><button class='btnsmore active'>Register </button></router-link>
+<div class="comment-respond">
+    <router-link :to="{ name: 'Login' }"><button >Login</button></router-link>
+    <router-link :to="{ name: 'Register' }"><button >Register </button></router-link>
 </div>
 </div>
 </div>
@@ -190,6 +190,22 @@ a:active {
   text-decoration: underline;
 }
 
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: transparent;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.comment-respond button:hover {
+  background: #8e11f3;
+  color: white;
+}
 
 @media only screen and (max-width: 750px) { 
 

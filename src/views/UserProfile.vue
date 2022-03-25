@@ -6,12 +6,14 @@
   
 <h1>{{user.name}}</h1>
 <img :src="user.avatar" class="pp" alt="profile-pic">
-        <h3>EMAIL</h3>
+        <h3>EMAIL:</h3>
 <p>{{user.email}}</p>
-<h3>CONTACT</h3>
+<h3>CONTACT:</h3>
 <p>{{user.contact}}</p>
+<h3>PASSWORD:</h3>
+<p>{{user.password}}</p>
 
-<div class="div2 d-flex" >
+  <div class="comment-respond">
 <button class="btn btn-danger butt">DELETE</button>
 
 <button class="btn btn-secondary butt">EDIT</button>
@@ -19,7 +21,9 @@
 
 
 </div>
-
+<br>
+<br>
+<br>
 
 
 </template>
@@ -101,8 +105,12 @@ mounted() {
    overflow-y: scroll;
 }
 
-h1,h5,h3{
-  color:red;
+h1{
+  color:#8e11f3;
+}
+
+h5,h3{
+  color:#20e6b3;
 }
 p{
   color: white;
@@ -137,6 +145,22 @@ color: red;
     height: 200px;
     width:200px;
 
+}
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: transparent;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.comment-respond button:hover {
+  background: #8e11f3;
+  color: white;
 }
 
 .navg{

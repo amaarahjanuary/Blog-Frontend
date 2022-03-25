@@ -11,7 +11,9 @@
         <br>
         <br>
         <p>It's a great environment to find other people who share the same interests as you, as well as introducing you to the fandom. We hope you enjoy the experience on this site and we're looking forward to seeing your contributions to the site. </p>
-        <router-link :to="{ name: 'Blogs' }"><div class="btn mt-1 mb-2">See blogs</div></router-link>
+        <div class="comment-respond">
+        <router-link :to="{ name: 'Blogs' }"><button>See Blogs</button></router-link>
+        </div>
       </article>
     </div>
   </div>
@@ -107,5 +109,22 @@ h1 {
 
 p{
   line-height: 1.6;
+}
+
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: transparent;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.comment-respond button:hover {
+  background: #8e11f3;
+  color: white;
 }
 </style>

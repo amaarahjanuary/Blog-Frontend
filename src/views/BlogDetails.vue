@@ -315,7 +315,7 @@ ul.comment-list li a {
   transition: background .15s ease-in-out;
 }
 .comment-respond button:hover {
-  background: #D6CCC7;
+  background: #8e11f3;
 }
 
 .nav-links {
