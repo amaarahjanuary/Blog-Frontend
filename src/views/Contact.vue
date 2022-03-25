@@ -15,7 +15,7 @@
 
 
 
-<div class="submit">
+ <div class="comment-respond">
     <button type="submit">Send Message</button>
 </div>
 
@@ -243,26 +243,24 @@ body {
   background-image: linear-gradient(to bottom, #6eddd7, #3dadd2);
 }
 
-.icon-red {
-  background-color: #e1534f;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UwOTY2ZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2UxNTM0ZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0966f), color-stop(100%, #e1534f));
-  background-image: -moz-linear-gradient(top, #e0966f, #e1534f);
-  background-image: -webkit-linear-gradient(top, #e0966f, #e1534f);
-  background-image: linear-gradient(to bottom, #e0966f, #e1534f);
-}
-
-.icon-purple {
-  background-color: #6b4fe1;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E5NmZlMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZiNGZlMSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a96fe0), color-stop(100%, #6b4fe1));
-  background-image: -moz-linear-gradient(top, #a96fe0, #6b4fe1);
-  background-image: -webkit-linear-gradient(top, #a96fe0, #6b4fe1);
-  background-image: linear-gradient(to bottom, #a96fe0, #6b4fe1);
-}
 
 
 /* icon end */
+
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: white;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.comment-respond button:hover {
+  background: #20e6b3;
+  color: white;
+}
 </style>

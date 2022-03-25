@@ -193,7 +193,7 @@ a:active {
 .comment-respond button {
   margin-top: 20px;
   padding: 15px 30px;
-  background: transparent;
+  background: white;
   border: 1px solid #D6CCC7;
   font-family: "Old Standard TT", Times New Roman, serif;
   font-size: 16px;

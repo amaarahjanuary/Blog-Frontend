@@ -270,21 +270,7 @@ animation: AnimationName 10s ease infinite;
   
 }
 
-/* @-webkit-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes AnimationName { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-} */
+
 
 .card p{
   font-family: lato;
@@ -410,24 +396,6 @@ h1{
   max-width: 200px 
 } */
 
-.card1{
-   background-image: url(http://www.festabimbianimazione.it/media/k2/galleries/136/Colori%20Fluo%20festa%20Arezzo%207.JPG);
-}
-.card2{
-   background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQvdIMVlW3Mn8TmkGmtulq2taIDoUIJvr_lt87EWhgdCY5diNhH0Q);
-}
-.card3{
-   background-image: url(http://www.romatoday.it/~media/horizontal-hi/26065597680895/fluo-party-2-2.jpg);
-}
-.card4{
-   background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSiLXTcanAKRZhMo-5Ga9pzsXIgjWcSbCdz3xFhMVI1PDZSRgQgUQ);
-}
-.card5{
-   background-image: url(https://www.gadgetsvirali.com/wp-content/uploads/2016/09/preservativo-fluo-thumbnail-1.jpg);
-}
-.card6{
-   background-image: url(http://www.festabimbianimazione.it/media/k2/galleries/136/Colori%20Fluo%20festa%20Arezzo%207.JPG);
-}
 
 .line{
   height:2px;
@@ -494,14 +462,20 @@ h1{
 
 
 .button {
-  width: 10em;
-  text-align: center;
-  font-weight: bold;
-  padding: 1em 2em;
-  background: #8500e4;
-  border-radius: 3em;
-  color: #20e6b3;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: #20e6b3;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
   cursor: pointer;
+  transition: background .15s ease-in-out;
+}
+.button:hover {
+  background: #8e11f3;
+  color: white;
 }
 
 details > div {
@@ -534,8 +508,8 @@ details[open] summary::after {
 details[open] summary::before {
   content: '';
   display: block;
-  width: 100vw;
-  height: 100vh;
+  width: 10px;
+  height: 10px;
   background: black;
   position: fixed;
   top: 0;

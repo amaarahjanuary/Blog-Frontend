@@ -37,6 +37,8 @@ export default {
       name:"",
       contact:"",
       email:"",
+      avatar: "",
+      password: "",
 
     };
   },

@@ -21,14 +21,21 @@
       v-model="contact"
       placeholder="Contact Number"
     />
+        <input
+      class="form-input neu-border-inset"
+      type="text"
+      v-model="avatar"
+      placeholder="Profile pic"
+    />
     <input
       class="form-input neu-border-inset"
       type="password"
       v-model="password"
       placeholder="Password"
     />
-    <button type="submit" class="form-btn neu-border">Sign up</button>
-
+     <div class="comment-respond">
+    <button type="submit" class="button">Sign up</button>
+     </div>
 
     <p>
       Already have an account?
@@ -44,6 +51,7 @@ export default {
       name: "",
       email: "",
       contact: "",
+      avatar:"",
       password: "",
     };
   },
@@ -55,6 +63,7 @@ export default {
           name: this.name,
           email: this.email,
           contact: this.contact,
+          avatar: this.avatar,
           password: this.password,
         }),
         headers: {
@@ -145,5 +154,23 @@ h4 {
 
 .link {
   color: #20e6b3;
+}
+
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: white;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+    border-radius: 30px;
+}
+.comment-respond button:hover {
+  background: #20e6b3;
+  color: white;
 }
 </style>

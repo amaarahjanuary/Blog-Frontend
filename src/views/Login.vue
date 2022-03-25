@@ -14,8 +14,9 @@
       v-model="password"
       placeholder="Password"
     />
-    <button type="submit" class="form-btn neu-border">Sign in</button>
-
+     <div class="comment-respond">
+    <button type="submit" class="button">Sign in</button>
+     </div>
     <p>
       Not a member?
       <router-link :to="{ name: 'Register' }"><div class="link">Create an account</div></router-link>
@@ -126,5 +127,23 @@ h4 {
 
 .link {
   color: #20e6b3;
+}
+
+.comment-respond button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: white;
+  border: 1px solid #D6CCC7;
+  font-family: "Old Standard TT", Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #433F3F;
+  cursor: pointer;
+  transition: background .15s ease-in-out;
+  border-radius: 30px;
+}
+.comment-respond button:hover {
+  background: #20e6b3;
+  color: white;
 }
 </style>
